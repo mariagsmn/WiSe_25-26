@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR-Weihnachtskarte</title>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <title>Abgabe IV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.3/aframe/build/aframe-ar.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
-    
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-marker type="pattern" url="assets/marker.patt">
+      <a-entity id="snowflow"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
+</html>
 </html>
