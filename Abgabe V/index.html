@@ -1,26 +1,30 @@
-<html>
-    <head>
-        <meta name="apple-mobile-web-app-capable" content="yes"> 
-        <script src="aframe-v1.5.0.min.js"></script>
-        <script src="aframe-marker-ar.js"></script>
-    </head>
+<!doctype html>
+<html lang="de">
 
-    <body>
-        <a-scene embedded arjs="sourceType: webcam;" vr-mode-ui="enabled: false">
-            
-            <a-assets>
-                <a-video id="videoclip" preload="auto"
-                    src="musicVideo.mp4"
-                    width="160" height="90" autoplay loop="true"
-                    crossOrigin="anonymous" muted></a-video>
-            </a-assets>
-            
-            <a-marker type="pattern" url="pattern-play-button.patt">
-                <a-plane width="5.4" height="5.4" position="0 0 0" play-on-click material="shader: flat; src: #videoclip" geometry="" rotation="-90 0 0"></a-plane>
-            </a-marker>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <title>Abgabe IV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.3/aframe/build/aframe-ar.min.js"></script>
+  <script src="script.js"></script>
+</head>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+<body>
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-marker type="pattern" url="assets/marker.patt">
+      <a-entity id="snowflow"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+</html>
 
 </html>
