@@ -11,3 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+    AFRAME.registerComponent('start-button', {
+      init: function () {
+        this.el.addEventListener('click', () => {
+          alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
+          // Später: Button ausblenden und Eier anzeigen
+          // this.el.setAttribute('visible', 'false');
+        });
+      }
+    });
+
+    document.querySelector('#startBtn').setAttribute('start-button', '');
