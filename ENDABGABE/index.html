@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
-  <title>AR Pet – Start Szene</title>
+  <title>AR Pet - Start Szene</title>
 
   <style>
-      body { margin: 0; overflow: hidden; }
-      #start-msg {
-          position: fixed;
-          top: 10px;
-          left: 50%;
-          transform: translateX(-50%);
-          color: white;
-          font-family: sans-serif;
-          background: rgba(0,0,0,0.5);
-          padding: 8px 14px;
-          border-radius: 10px;
-      }
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #start-msg {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-family: sans-serif;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
   </style>
 
   <!-- A-Frame + AR.js -->
@@ -30,22 +35,14 @@
   <a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; debugUIEnabled: false;">
 
     <!-- Marker mit Button drauf -->
-    <a-marker type="pattern" url="ENDABGABE/assets/pattern-play-button.patt" id="marker" size="1">
+    <a-marker type="pattern" src="assets/pattern-play-button.patt" id="marker" size="1">
 
       <!-- Start-Button -->
-      <a-plane id="startBtn"
-         color="#88c0fc"
-         width="1.4" height="0.5"
-         position="0 0 0.15"
-         rotation="-90 0 0"
-         class="clickable">
+      <a-plane id="startBtn" color="#88c0fc" width="1.4" height="0.5" position="0 0 0.15" rotation="-90 0 0"
+        class="clickable">
 
         <!-- Text im Button -->
-        <a-text value="Start Game"
-                align="center"
-                color="black"
-                width="1.3"
-                position="0 0 0.02">
+        <a-text value="Start Game" align="center" color="black" width="1.3" position="0 0 0.02">
         </a-text>
 
       </a-plane>
@@ -66,5 +63,5 @@
   </script>
 
 </body>
-</html>
 
+</html>
