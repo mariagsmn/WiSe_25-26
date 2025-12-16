@@ -31,28 +31,47 @@
 
     <!-- Marker -->
     <a-marker type="pattern" url="assets/pattern-play-button.patt" id="marker" size="1">
+
+
+      <!-- Start-Button -->
+      <a-plane id="startBtn"
+               class="clickable"
+               color="#88c0fc"
+               width="1.2"
+               height="0.5"
+               position="0 1 0"
+               rotation="0 0 0">
+        <a-text value="Start Game"
+                align="center"
+                color="black"
+                width="1.1"
+                position="0 0 0.01">
+        </a-text>
+      </a-plane>
+
     </a-marker>
 
-    <!-- Start-Button (hellblau, fest sichtbar, anklickbar) -->
-    <a-plane id="startBtn"
-             class="clickable"
-             color="#88c0fc"
-             width="1.2"
-             height="0.5"
-             position="0 1 0"
-             rotation="0 0 0">
-      <a-text value="Start Game"
-              align="center"
-              color="black"
-              width="1.1"
-              position="0 0 0.01">
-      </a-text>
-    </a-plane>
+    <!-- Kamera + Cursor für Handy -->
+    <a-entity camera look-controls>
+      <a-cursor fuse="true" fuse-timeout="500" raycaster="objects: .clickable"></a-cursor>
+    </a-entity>
 
   </a-scene>
 
-  <!-- Klick-Event in JS-Datei auslagern -->
-  <script src="scene.js"></script>
+  <!-- Button Event -->
+  <script>
+    AFRAME.registerComponent('start-button', {
+      init: function () {
+        this.el.addEventListener('click', () => {
+          alert("🎉 Start gedrückt! → Als nächstes: Eier auswählen!");
+          // Später: Button ausblenden und Eier anzeigen
+          // this.el.setAttribute('visible', 'false');
+        });
+      }
+    });
+
+    document.querySelector('#startBtn').setAttribute('start-button', '');
+  </script>
 
 </body>
 </html>
