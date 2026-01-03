@@ -34,8 +34,9 @@
   arjs="sourceType: webcam; facingMode: environment; debugUIEnabled: false;">
 
     <!-- Marker mit Button -->
-    <a-marker type="pattern" url="https://mariagsmn.github.io/WiSe_25-26/ENDABGABE" id="marker" size="1">
+    <a-marker type="pattern" url="https://mariagsmn.github.io/WiSe_25-26/ENDABGABE/assets/pattern-play-button.patt" id="marker" size="1">
 
+      
       <!-- Start-Button (initial unsichtbar) -->
       <a-plane id="startBtn"
                class="clickable"
@@ -64,6 +65,21 @@
 
   <!-- JS-Datei mit Marker-Logik -->
   <script src="scene.js"></script>
+
+  <script>
+  const marker = document.querySelector("#marker");
+
+  marker.addEventListener("markerFound", () => {
+    alert("Marker erkannt!");
+    document.querySelector("#startBtn").setAttribute("visible", "true");
+  });
+
+  marker.addEventListener("markerLost", () => {
+    alert("Marker verloren!");
+    document.querySelector("#startBtn").setAttribute("visible", "false");
+  });
+</script>
+
 
 </body>
 </html>
