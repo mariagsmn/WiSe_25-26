@@ -79,6 +79,11 @@
     document.querySelector("#startBtn").setAttribute("visible", "false");
   });
 </script>
+<script>
+  document.querySelector('a-scene').addEventListener('loaded', () => {
+    alert("A-Frame Szene geladen!");
+  });
+</script>
 
 
 </body>
