@@ -12,4 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.currentTime = 0; // Musik von vorne zurücksetzen
     }
   });
+
+  // Loop-Funktionalität: Audio neu starten, wenn es endet
+  audioPlayer.addEventListener('ended', () => {
+    audioPlayer.currentTime = 0;
+    audioPlayer.play();
+  });
 });
+
